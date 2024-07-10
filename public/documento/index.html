@@ -9,29 +9,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-  <title>Docs | Cadastro</title>
+  <title>AluraDocs | Documento</title>
 </head>
 
-<body class="col-lg-6 my-3 mx-auto">
+<body class="my-3">
   <header>
-    <h1 class="text-center display-2 mb-4">Docs</h1>
+    <h1 class="display-4 mb-4 text-center" id="titulo-documento">Documento sem título</h1>
   </header>
 
-  <main class="w-75 mx-auto">
-    <hr>
-    <h2 class="display-6 mb-3">Cadastro</h2>
+  <main class="container-md">
+    <div class="row mb-3">
+      <div class="col-sm-8 col-md-9">
+        <textarea id="editor-texto" class="form-control mb-4" style="height: 400px; resize: none;"></textarea>
+      </div>
 
-    <form id="form-cadastro">
-      <div class="mb-3">
-        <label for="input-usuario" class="form-label">Usuário</label>
-        <input type="text" class="form-control" id="input-usuario" required>
+      <div class="col-sm-4 col-md-3">
+        <h2 class="fs-5 fw-normal mb-3">Usuários conectados:</h2>
+
+        <ul class="list-group" id="usuarios-conectados">
+          <li class="list-group-item">Usuário 1</li>
+          <li class="list-group-item">Usuário 2</li>
+        </ul>
       </div>
-      <div class="mb-3">
-        <label for="input-senha" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="input-senha" required>
-      </div>
-      <button type="submit" class="btn btn-primary mb-3">Cadastrar</button>
-      <p>Já possui cadastro? <a href="/login/index.html" class="link-primary">Faça o login</a></p>
+    </div>
+
+    <div class="col-sm-8 col-md-9 d-flex justify-content-between">
+      <a href="/index.html" class="btn btn-primary">Voltar</a>
+      <button id="excluir-documento" class="btn btn-outline-danger">Excluir documento</button>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -39,6 +44,7 @@
     crossorigin="anonymous"></script>
 
   <script src="/socket.io/socket.io.js"></script>
+  <script src="documento.js" type="module"></script>
 </body>
 
 </html>
